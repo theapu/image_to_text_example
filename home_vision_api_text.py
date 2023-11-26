@@ -1,4 +1,4 @@
-import os, io
+import sys, os, io
 import argparse
 
 from google.cloud import vision
@@ -50,5 +50,6 @@ try:
     outputfilewrite.write("\n")
     outputfilewrite.close()
     print("Done");
-except:
-  print("An error occurred")
+except Exception as e:
+    print("An error occurred")
+    print(f"Error: {type(e).__name__}, Message: {str(e)}")
