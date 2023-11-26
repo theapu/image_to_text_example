@@ -45,10 +45,10 @@ try:
     doctext = response.full_text_annotation.text
 
     print("Writing text to " + outputfile)
-    outputfilewrite = open(outputfile, 'w')
-    outputfilewrite.write(doctext)
-    outputfilewrite.write("\n")
-    outputfilewrite.close()
+    with io.open(outputfile, 'w', encoding="utf-8") as outputfilewrite:
+    	outputfilewrite.write(doctext)
+    	outputfilewrite.write("\n")
+    
     print("Done");
 except Exception as e:
     print("An error occurred")
