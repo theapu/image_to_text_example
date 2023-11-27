@@ -15,10 +15,14 @@ pip install --upgrade google-cloud-vision
 4. Copy project credentials json from console.cloud.google.com to credentials folder
 5. Run using
 ```
-python home_vision_api_text.py -i <input image file> -o <output txt file> -l <image text language code>
+python imagetotext.py -i <input image file> -o <output txt file> -l <image text language code> -c <credential file path>
+```
+Example:
+```
+python imagetotext.py -i test.jpg -o test.txt -l ml -c ./credentials/home-vision-api.json
 ```
 6. To build standalinone binary install pyinstaller and build binary
 ```
 pip install pyinstaller
-pyinstaller --clean -y -F --add-data "<path to credential json>:credentials" home_vision_api_text.py
+pyinstaller --clean -y -F imagetotext.py
 ```
